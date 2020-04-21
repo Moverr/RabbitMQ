@@ -18,7 +18,7 @@ import java.util.concurrent.TimeoutException;
  */
 public class Receiver {
 
-    private final static String QUEUE_NAME = "hello";
+    private final static String QUEUE_NAME = "Installations";
 
     public void receive() throws IOException, TimeoutException {
         ConnectionFactory factory = new ConnectionFactory();
