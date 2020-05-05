@@ -10,5 +10,7 @@ package com.pubsub;
  * @author muyin
  */
 public class EmitLog {
-      private static final String EXCHANGE_NAME = "logs";
+    public static void main(String[] args) {
+        
+    }
 }
