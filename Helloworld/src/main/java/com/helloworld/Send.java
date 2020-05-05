@@ -1,5 +1,6 @@
 package com.helloworld;
 
+import com.rabbitmq.client.BuiltinExchangeType;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
@@ -26,6 +27,8 @@ public class Send {
 
         try (Connection connection = factory.newConnection();
             Channel channel = connection.createChannel()) {
+            //this is the default exchange route 
+            channel.exchangeDeclare("logs", BuiltinExchangeType.DIRECT);
             channel.queueDeclare(QUEUE_NAME, false, false, false, null);
             String message = "God is Merciful!";
             channel.basicPublish("", QUEUE_NAME, null, message.getBytes(StandardCharsets.UTF_8));
