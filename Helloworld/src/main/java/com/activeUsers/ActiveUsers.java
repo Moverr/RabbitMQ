@@ -11,11 +11,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
-import wiremock.com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import java.util.AbstractList;
 import java.util.ArrayList;
 
 /**
