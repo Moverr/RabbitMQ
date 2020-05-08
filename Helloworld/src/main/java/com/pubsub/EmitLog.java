@@ -29,9 +29,10 @@ public class EmitLog {
                 Channel channel = connection.createChannel();) {
             channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.FANOUT);
             String message = args.length < 1 ? "info: Hello World!" : String.join(" ", args);
-
-            channel.basicPublish(EXCHANGE_NAME, "", null, message.getBytes("UTF-8"));
-            System.out.println(" [x] Sent '" + message + "'");
+            for (int x = 0; x <= 10000; x++) {
+                channel.basicPublish(EXCHANGE_NAME, "", null, message.getBytes("UTF-8"));
+                System.out.println(" [x] Sent '" + message + "'");
+            }
 
         }
 
